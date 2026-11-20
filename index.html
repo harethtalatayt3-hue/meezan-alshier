@@ -13,6 +13,15 @@
   <p class="sub">تطبيق أندرويد لوزن الشعر العربي وصناعته</p>
   <p class="verse">قِفَا نَبْكِ مِنْ ذِكْرَى حَبِيبٍ وَمَنْزِلِ</p>
 
+  <p style="text-align:center"><a id="dl" class="dl" href="update.json">تنزيل التطبيق لأندرويد</a></p>
+  <script>
+    fetch("update.json?t=" + Date.now()).then(r => r.json()).then(u => {
+      const a = document.getElementById("dl");
+      a.href = u.apk;
+      a.textContent = "تنزيل التطبيق لأندرويد — الإصدار " + u.versionName;
+    }).catch(() => {});
+  </script>
+
   <div class="card">
     <h2>ما يفعله التطبيق</h2>
     <ul>
